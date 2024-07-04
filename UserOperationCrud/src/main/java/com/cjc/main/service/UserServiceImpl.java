@@ -1,5 +1,7 @@
 package com.cjc.main.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,13 @@ public class UserServiceImpl implements UserInterface {
 		
 		return ur.save(u);
 	}
+	@Override
+	public User getSingleData(int id) {
+		Optional<User> data=ur.findById(id);
+		return data.get();
+	}
+	
+	
 	
 
 }
