@@ -1,5 +1,6 @@
 package com.cjc.main.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,11 @@ public class UserServiceImpl implements UserInterface {
 	public User getSingleData(int id) {
 		Optional<User> data=ur.findById(id);
 		return data.get();
+	}
+	@Override
+	public List<User> getAllUserDetails() {
+	Iterable<User>data=ur.findAll();
+		return (List<User>) data;
 	}
 	
 	
