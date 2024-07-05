@@ -1,5 +1,7 @@
 package com.cjc.main.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +28,12 @@ public class UserController {
 	{
 		User uData=ui.getSingleData(id);
 		return new ResponseEntity<User>(uData,HttpStatus.OK);
+		
+	}
+	@GetMapping("/getAllData")
+	public List<User> getAllUserDetails() {
+		List<User>uData=ui.getAllUserDetails();
+		return uData;
 		
 	}
 
